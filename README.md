@@ -1,8 +1,4 @@
-# React + Vite
+# MindStride
+"MindStride" could imply the idea of taking intentional steps or strides toward better mental health, personal growth, or self-improvement. The term "Mind" refers to the mental aspect, encompassing thoughts, emotions, and mindfulness. "Stride" typically denotes a purposeful, confident step or movement forward. Therefore, "MindStride" might signify a deliberate journey or progress in enhancing mental well-being, personal development, or self-discovery.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+dns - Cr@2aASk2vN.qwD
