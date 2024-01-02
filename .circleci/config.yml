@@ -20,7 +20,8 @@ jobs:
           paths:
             - ./dist
 
-
+orbs:
+  aws-cli: circleci/aws-cli@4.0
   deploy_project:
     executor: aws-cli/default
     steps:
