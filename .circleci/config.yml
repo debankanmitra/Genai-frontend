@@ -36,8 +36,8 @@ orbs:
   
 
 # Orchestrate jobs using workflows
-workflows:
-  deploy-to-S3:
-    jobs:
-      - build_project
-      - deploy_project
+# workflows:
+#   deploy-to-S3:
+#     jobs:
+#       - build_project
+#       - deploy_project
