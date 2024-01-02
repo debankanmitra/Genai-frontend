@@ -21,7 +21,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - .
+            - ./dist
 
   deploy_project:
     executor: aws-cli/default
@@ -35,11 +35,13 @@ jobs:
           command: ls
       - run:
           name: Upload file to S3
-          command: aws s3 sync ./dist s3://mindstride --delete --exact-timestamps
+          command: aws s3 sync ./dist/ s3://mindstride --delete --exact-timestamps
 
 workflows:
   deploy-to-S3:
     jobs:
       - build_project
-      - deploy_project
+      - deploy_project:
+          requires:
+            - build_project
 
