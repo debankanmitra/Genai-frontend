@@ -83,8 +83,8 @@ function landingpage() {
     <Wrapper className="wrapper">
     <div id="main">
         <div className="headline">
-        <h1>Empower Your Legal <br/>   Practice with AI <br/> Assistance</h1><br/>
-        <h4><strong>Your Trusted Partner in Legal Innovation with futuristic AI brain with legal documents Large companies are using AI to charge fees, collect debts and spam consumers. Legal.AI is a highly motivated team, that builds tools to fight back. Our tools help level the playing field, giving power to the people.</strong></h4>
+        <h1>Personal Development <br/>  with AI <br/> Assistance</h1><br/>
+        <h4><strong>Your Trusted Partner in Personal Development with futuristic AI brain with legal documents Large companies are using AI to charge fees, collect debts and spam consumers. Legal.AI is a highly motivated team, that builds tools to fight back. Our tools help level the playing field, giving power to the people.</strong></h4>
         <button type="button">Lets Chat</button>
         </div>
         <img src="/vite.svg" alt="" />   

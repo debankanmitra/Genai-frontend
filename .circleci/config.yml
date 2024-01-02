@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  aws-cli: circleci/aws-cli@1.0.0  # Replace with the appropriate version
+  aws-cli: circleci/aws-cli@1.0.0 
 
 jobs:
   build_project:
@@ -30,9 +30,6 @@ jobs:
           at: .
       - aws-cli/setup:
           profile-name: default
-      - run:
-          name: list directory
-          command: ls
       - run:
           name: Upload file to S3
           command: aws s3 sync ./dist/ s3://mindstride --delete --exact-timestamps
