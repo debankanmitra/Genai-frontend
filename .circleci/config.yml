@@ -32,7 +32,7 @@ jobs:
           profile-name: default
       - run:
           name: Upload file to S3
-          command: aws s3 sync dist/ s3://mindstride --delete --exact-timestamps
+          command: aws s3 sync dist s3://mindstride --delete --exact-timestamps
 
 workflows:
   deploy-to-S3:
