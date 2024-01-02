@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  aws-cli: circleci/aws-cli@1.0.0  # Replace with the appropriate version
+
 jobs:
   build_project:
     docker:
@@ -18,8 +21,7 @@ jobs:
             - ./dist
 
   deploy_project:
-    docker:
-      - image: cimg/base:2022.01
+    executor: aws-cli/default
     steps:
       - attach_workspace:
           at: .
@@ -34,3 +36,4 @@ workflows:
     jobs:
       - build_project
       - deploy_project
+
