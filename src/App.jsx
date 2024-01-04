@@ -1,17 +1,16 @@
-import './App.css'
-import Upper from './upper'
-import Middle from './middle'
-import Lower from './lower'
+import "./App.css";
+import Upper from "./upper";
+import Middle from "./middle";
+import Lower from "./lower";
 
 function App() {
-
   return (
     <>
-    <Upper/>
-    <Middle/>
-    <Lower/>
+      <Upper />
+      <Middle />
+      <Lower />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

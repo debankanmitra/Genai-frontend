@@ -3,9 +3,10 @@
 
 dns - Cr@2aASk2vN.qwD
 
-Deploy to AWS S3 using Github+CircleCI
+Sure, here's a concise breakdown:
 
-1) Create a Bucket by the name of your application
-2) create a IAM role alongwith access key for S3fullacces for your CircleCI 
-3) Register Circle CI, import your project and save the access key to your project environment
-4) create a .circle/config.yml file depicting the workflow 
+1) **Create an AWS S3 Bucket**: Disable "block all public access," set up a bucket policy.
+2) **Set Up IAM Role**: Generate an IAM role and access key with AmazonS3FullAccess for CircleCI.
+3) **Configure CircleCI**: Sign up on CircleCI, link your GitHub repo, import your project, and save the access key in the project environment settings.
+4) **Create Configuration File**: Craft a .circle/config.yml file outlining the workflow.
+5) **Push Your Code**: Commit and push your code changes to trigger the deployment process.

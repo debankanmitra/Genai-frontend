@@ -1,17 +1,16 @@
 import styled from "styled-components";
 
-// eslint-disable-next-line react-refresh/only-export-components
 const Wrapper = styled.section`
-    width: 100%;
-    height: 150vh;
-    background: rgba(245,250,255,1);
+  width: 100%;
+  height: 150vh;
+  background: rgba(245, 250, 255, 1);
 `;
-function middle() {
-  return(
+function Middle() {
+  return (
     <Wrapper>
-     <div>middle</div>
+      <div>middle</div>
     </Wrapper>
-  )
+  );
 }
 
-export default middle;
+export default Middle;
