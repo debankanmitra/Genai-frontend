@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.section`
@@ -43,22 +44,36 @@ const Wrapper = styled.section`
 `;
 
 function Interface() {
+  const [data, setData] = useState({});
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch('http://127.0.0.1:8000/events', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const result = await response.json();
+    console.log(result);
+  };
   return (
     <Wrapper>
       <div>interface</div>
       <div className="inputarea">
-        <span className="innerarea">
+        <form className="innerarea" onSubmit={handleSubmit}>
           <input
             className="common"
             type="text"
             placeholder="Talk to your Personal Development Coach"
-            name=""
-            id=""
+            onChange={(e) => setData({ ...data, name: e.target.value })}
+            onKeyDown={(event) => event.key == "Enter" && handleSubmit()}
           />
           <button type="submit" className="common">
             Send
           </button>
-        </span>
+        </form>
       </div>
     </Wrapper>
   );
