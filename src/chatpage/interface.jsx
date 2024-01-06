@@ -44,31 +44,35 @@ const Wrapper = styled.section`
 `;
 
 function Interface() {
-  const [data, setData] = useState({});
+  const [inputValue, setInputValue] = useState('');
+  const [messages, setMessages] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://127.0.0.1:8000/events', {
+    setMessages((prevMessages) => [...prevMessages, inputValue]);
+    const response= await fetch('http://127.0.0.1:8000/events', {
       method: 'POST',
-      body: JSON.stringify(data),
+      body: JSON.stringify(inputValue),
       headers: {
         'Content-Type': 'application/json'
       }
     });
     const result = await response.json();
-    console.log(result);
+    setMessages((prevMessages) => [...prevMessages, result.answer]);
+
   };
   return (
     <Wrapper>
-      <div>interface</div>
+      <div>{messages?.map((message,index) => <p key={index}>{message}</p>)}</div>
       <div className="inputarea">
         <form className="innerarea" onSubmit={handleSubmit}>
           <input
             className="common"
             type="text"
+            value={inputValue}
             placeholder="Talk to your Personal Development Coach"
-            onChange={(e) => setData({ ...data, name: e.target.value })}
-            onKeyDown={(event) => event.key == "Enter" && handleSubmit()}
+            onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={(event) => event.key === "Enter" && handleSubmit()}
           />
           <button type="submit" className="common">
             Send
