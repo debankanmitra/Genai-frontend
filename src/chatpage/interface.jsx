@@ -22,6 +22,8 @@ const Wrapper = styled.section`
     li {
       list-style-type: none;
       display: flex;
+      font-size: 1.2em;
+      letter-spacing: 0.7px;
     }
     .user {
       margin-bottom: 1rem;
@@ -39,7 +41,7 @@ const Wrapper = styled.section`
     .bot>span {
         border: 1px solid rgba(102, 88, 234, 1);
         padding: 2px 10px 4px 10px;
-        border-radius: 15px;
+        border-radius: 0px 15px 15px 15px;
         margin-right: 1rem;
         background-color: rgba(102, 88, 234, 1);
         height: fit-content;
@@ -58,14 +60,6 @@ const Wrapper = styled.section`
     display: flex;
     width: 70%;
     /* border: 1px solid blue; */
-    input {
-      width: 90%;
-      margin-right: 10px;
-    }
-    button {
-      width: 20%;
-      margin-left: 10px;
-    }
     .common {
       padding: 10px;
       border-radius: 20px;
@@ -73,6 +67,22 @@ const Wrapper = styled.section`
       background-color: rgba(30, 31, 32, 1);
       cursor: pointer;
     }
+    input {
+      width: 90%;
+      margin-right: 10px;
+      /* border-image: linear-gradient(to right, #ff8a00, #e52e71); */
+    }
+    button {
+      width: 20%;
+      margin-left: 10px;
+      transition-duration: 0.4s;
+    }
+    button:hover {
+      /* color: black; */
+      background-image: linear-gradient(90deg, #ff8a00, #e52e71);
+      border: 2px solid aliceblue;
+    }
+    
   }
 `;
 
@@ -98,7 +108,7 @@ function Interface() {
   return (
     <Wrapper>
       <div className="screen">
-        <center>
+        <center style={{ fontSize: "1.5em" }}>
           {" "}
           Hello! Ask me a question to get started. I am your personal
           development coach.{" "}

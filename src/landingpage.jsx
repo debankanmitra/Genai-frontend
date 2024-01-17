@@ -1,21 +1,24 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import Blob from "./blob";
+import { Canvas } from "@react-three/fiber";
 
 const Wrapper = styled.section`
-  #main {
     border: 1px solid red;
     margin: 0 auto;
-    width: 90%;
+    width: 85%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid #fdd804;
+    transform: translate(0%, 50%);
     .headline {
-      /* float: left; */
+      width: 50%;
       margin-right: 20px;
       border: 1px solid #0f30b4;
       h1 {
         border: 1px solid #04d326;
-        font-size: 6em;
+        font-size: 4em;
         line-height: 1em;
         text-align: left;
         color: #ffffff;
@@ -50,7 +53,6 @@ const Wrapper = styled.section`
       /* float: right; */
       margin-left: 20px;
     }
-  }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     #main .headline h1 {
       font-size: 5em;
@@ -84,27 +86,26 @@ function Landingpage() {
   };
   return (
     <Wrapper className="wrapper">
-      <div id="main">
         <div className="headline">
           <h1>
-            Personal Development <br /> with AI <br /> Assistance
+            Personal Development with AI Assistance, Conversational AI Bots for
+            Personal Development
           </h1>
           <br />
           <h4>
             <strong>
-              Your Trusted Partner in Personal Development with futuristic AI
-              brain with legal documents Large companies are using AI to charge
-              fees, collect debts and spam consumers. Legal.AI is a highly
-              motivated team, that builds tools to fight back. Our tools help
-              level the playing field, giving power to the people.
+              Your Trusted Partner in Personal Development with futuristic AI.
+              Our tools help level the playing field, giving power to the
+              people.
             </strong>
           </h4>
           <button type="button" onClick={handleClick}>
             Lets Chat
           </button>
         </div>
-        <img src="/vite.svg" alt="" />
-      </div>
+        <Canvas className="canvas" camera={{ position: [0, 0, 10], fov: 60 }}>
+          <Blob />
+        </Canvas>
     </Wrapper>
   );
 }

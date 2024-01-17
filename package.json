@@ -10,10 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
+    "@react-three/fiber": "^8.9.1",
+    "@types/three": "^0.146.0",
+    "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.1",
-    "styled-components": "^6.1.6"
+    "styled-components": "^6.1.6",
+    "three": "^0.147.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.46",

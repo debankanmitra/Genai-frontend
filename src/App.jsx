@@ -1,14 +1,14 @@
 import "./App.css";
 import Upper from "./upper";
-import Middle from "./middle";
-import Lower from "./lower";
+// import Middle from "./middle";
+// import Lower from "./lower"
 
 function App() {
   return (
     <>
       <Upper />
-      <Middle />
-      <Lower />
+      {/* <Middle />
+      <Lower /> */}
     </>
   );
 }
