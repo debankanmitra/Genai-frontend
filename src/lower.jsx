@@ -2,15 +2,17 @@ import styled from "styled-components";
 
 const FooterWrapper = styled.footer`
  display: flex;
- justify-content: center;
+ justify-content: space-between;
  align-items: center;
+ width: 60%;
  height: 200px;
  background-color: #000;
  color: #fff;
+ margin: 0 auto;
 `;
 
-const Logo = styled.img`
- width: 100px;
+const Logo = styled.h3`
+ font-size: 2rem;
  margin-right: 20px;
 `;
 
@@ -26,14 +28,20 @@ const EmailLink = styled.a`
    text-decoration: underline;
  }
 `;
+
+const Address = styled.h2`
+ margin-left: 20px;
+ font-size: 1.2rem;
+`;
 function Lower() {
   return (
     <FooterWrapper>
-   <Logo src="/path/to/your/logo.png" alt="Your Logo" />
+   <Logo > @mindstride </Logo>
    <ContactInfo>
      <h2>Contact Us</h2>
-     <EmailLink href="mailto:dev@gmail.com">dev@gmail.com</EmailLink>
+     <EmailLink href="mailto:debankanmitra505@gmail.com">dev@gmail.com</EmailLink>
    </ContactInfo>
+   <Address>193 New Barrackpur<br/>Kolkata, India</Address>
  </FooterWrapper>
   );
 }
