@@ -1,4 +1,4 @@
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 import styled from "styled-components";
@@ -39,6 +39,27 @@ const Wrapper = styled.section`
       text-align: center;
     }
   }
+  .carousel-div {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 3px solid #fff; */
+    .image {
+      width: 25%;
+      height: 60vh;
+      background-image: url("https://mindstride-book-images.s3.amazonaws.com/book-${props => props.currentImageIndex}.jpg");
+      background-size: cover;
+      background-position: center;
+      border: 3px solid #fff;
+    }
+    .carousel-texts {
+      width: 50%;
+      height: 60vh;
+      /* border: 3px solid #fff; */
+      text-align: left;
+  }
+}
 `;
 
 const questionsList = [
@@ -49,12 +70,23 @@ const questionsList = [
 ];
 
 function Middle() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const images = [1, 2, 3, 4, 5, 6];
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((currentImageIndex + 1) % images.length);
+    }, 2000); // Change image every 2 seconds
+
+    return () => clearInterval(timer); // Clear the timer when the component unmounts
+  }, [currentImageIndex, images.length]);
+
   const [text] = useTypewriter({
     words: questionsList,
     loop: 0,
   });
   return (
-    <Wrapper>
+    <Wrapper currentImageIndex={currentImageIndex}>
       <h1>About</h1>
       <p>
         &ldquo;Mindstride&rdquo; could imply the idea of taking intentional
@@ -66,10 +98,26 @@ function Middle() {
         journey or progress in enhancing mental well-being, personal
         development, or self-discovery .
       </p>
+
       <div className="changing-text">
         <h3>Ask Questions like :</h3>
         <span className="questions">{text}</span>
         <Cursor cursorColor="black" />
+      </div>
+
+      <div className="carousel-div">
+        <div className="image" alt="image"></div>
+        <p className="carousel-texts">
+          Our application leverages the wisdom contained within a vast array of
+          books, including &ldquo;Think and Grow Rich&rdquo; and &ldquo;7 Habits
+          of Highly Effective People,&rdquo; among others. Our AI system parses
+          these books, extracting key insights and principles related to
+          self-development and mental health. These insights are then translated
+          into interactive, engaging conversations with users. We&apos;ve
+          curated a library of over 70 such books, covering a wide range of
+          topics from personal growth to mental health.
+        </p>
+
       </div>
     </Wrapper>
   );
