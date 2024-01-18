@@ -5,13 +5,47 @@ import Blob from "./blob";
 import { Canvas } from "@react-three/fiber";
 
 const Wrapper = styled.section`
-  border: 1px solid red;
-  transform: translate(0%, 60%);
-  .canvas {
-    margin-top: 5rem;
-    background-color: rgb(240, 248, 255);
-    width: 500px;
-    height: 400px;
+  width: 85%;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+  transform: translate(0%, 50%);
+  display: flex;
+  justify-content: space-between;
+  .headline {
+    /* border: 1px solid green; */
+    width: 50%;
+    padding-top: 3rem;
+    h1 {
+      font-size: 3.4em;
+      font-weight: 700;
+      line-height: 1em;
+      text-align: left;
+    }
+    h4 {
+      font-size: 1.5em;
+      font-style: italic;
+    }
+  }
+  .canvas-div {
+    /* background-color: rgb(240, 248, 255); */
+    /* border: 1px solid white; */
+    width: 40%;
+  }
+  button {
+    width: 200px;
+    padding: 15px 0;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    color: #010203ff;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 18px;
+    margin-top: 2rem;
+    border-radius: 30px;
+    &:hover {
+      background: #e6e0e0;
+      border: 1px solid #e6e0e0;
+    }
   }
 `;
 
@@ -38,10 +72,21 @@ function Landingpg() {
           Lets Chat
         </button>
       </div>
-        <Canvas className="canvas" style={{ width: "500px", height: "400px", backgroundColor: "rgb(240, 248, 255)" }}  width="500px" height="400px"  camera={{ position: [10, 10, 10], fov: 70 }}>
+
+      <div className="canvas-div">
+        <Canvas
+          className="canvas"
+          style={{
+            width: "400px",
+            height: "350px",
+            backgroundColor: "transparent",
+          }}
+          camera={{ position: [10, 10, 10], fov: 70 }}
+        >
           <Blob />
         </Canvas>
-   </Wrapper>
+      </div>
+    </Wrapper>
   );
 }
 
